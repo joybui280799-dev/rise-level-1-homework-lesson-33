@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vocabulary Lab 75</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+:root{
+  --bg:#f7f4ef; --panel:#ffffff; --panel2:#f2ede4; --fg:#211f1c; --dim:#6b6459;
+  --edge:#e2dacc; --edge2:#c9bfab;
+  --c1:#1f6b63; --c2:#c2561f; --c3:#3f54a8; --c4:#7b3f7e;
+  --c1s:#e2eeec; --c2s:#fbe8dd; --c3s:#e6e9f7; --c4s:#f2e7f3;
+  --accent:var(--c1); --accent-soft:var(--c1s);
+  --ok:#1b6b43; --ok-soft:#e1f0e7; --no:#a63226; --no-soft:#f9e4e1;
+  --warn:#92650c; --warn-soft:#fbefd6;
+  --shadow:0 1px 2px rgba(33,31,28,.07), 0 10px 26px rgba(33,31,28,.07);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#15181a; --panel:#1e2225; --panel2:#252a2d; --fg:#ebe9e3; --dim:#a0a49d;
+  --edge:#323839; --edge2:#49514f;
+  --c1:#67c2b6; --c2:#ec9166; --c3:#93a2ee; --c4:#c496d6;
+  --c1s:#1d322f; --c2s:#33231b; --c3s:#22263b; --c4s:#2d2133;
+  --accent:var(--c1); --accent-soft:var(--c1s);
+  --ok:#6cc08d; --ok-soft:#1a2e22; --no:#e58b7f; --no-soft:#331e1c;
+  --warn:#ddb25b; --warn-soft:#322914;
+  --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 26px rgba(0,0,0,.3);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#15181a; --panel:#1e2225; --panel2:#252a2d; --fg:#ebe9e3; --dim:#a0a49d;
+  --edge:#323839; --edge2:#49514f;
+  --c1:#67c2b6; --c2:#ec9166; --c3:#93a2ee; --c4:#c496d6;
+  --c1s:#1d322f; --c2s:#33231b; --c3s:#22263b; --c4s:#2d2133;
+  --accent:var(--c1); --accent-soft:var(--c1s);
+  --ok:#6cc08d; --ok-soft:#1a2e22; --no:#e58b7f; --no-soft:#331e1c;
+  --warn:#ddb25b; --warn-soft:#322914;
+  --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 26px rgba(0,0,0,.3);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;padding:0}
+body{background:var(--bg); color:var(--fg); font-size:16px; line-height:1.55;
+  font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif; -webkit-text-size-adjust:100%}
+.wrap{max-width:1120px; margin:0 auto; padding-block:22px; padding-left:16px; padding-right:16px}
+h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif}
+h1{font-size:1.78rem; margin:0 0 4px; letter-spacing:-.015em; text-wrap:balance}
+.brand{font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:700; margin:0 0 6px}
+.lede{color:var(--dim); margin:0 0 20px; max-width:64ch}
+
+.namebox{background:var(--panel); border:1px solid var(--edge); border-radius:13px; padding:14px 16px; margin-bottom:18px; box-shadow:var(--shadow)}
+.namebox label{display:block; font-size:.8rem; font-weight:600; color:var(--dim); margin-bottom:6px}
+input[type=text]{width:100%; max-width:380px; padding:10px 13px; font:inherit; color:var(--fg);
+  background:var(--panel2); border:1.5px solid var(--edge2); border-radius:9px}
+input[type=text]:focus{outline:2px solid var(--accent); outline-offset:1px}
+
+.menu{display:grid; gap:13px; grid-template-columns:repeat(auto-fit,minmax(248px,1fr))}
+.card{position:relative; overflow:hidden; background:var(--panel); border:1px solid var(--edge);
+  border-radius:15px; padding:17px 18px 18px; text-align:left; font:inherit; color:var(--fg);
+  cursor:pointer; box-shadow:var(--shadow); min-width:0; transition:transform .14s ease, border-color .14s ease}
+.card::before{content:''; position:absolute; inset:0 auto 0 0; width:5px; background:var(--k)}
+.card:hover{transform:translateY(-3px); border-color:var(--k)}
+.card .no{font-family:Fraunces,serif; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--k); font-weight:700}
+.card h3{margin:5px 0 6px; font-size:1.1rem}
+.card p{margin:0; color:var(--dim); font-size:.88rem}
+.card .meta{margin-top:11px; font-size:.76rem; color:var(--dim); border-top:1px dashed var(--edge2);
+  padding-top:8px; display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap}
+.card .star{color:var(--k); font-weight:700}
+
+.bar{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px}
+.bar .t{font-family:Fraunces,serif; font-weight:700; font-size:1.08rem; margin-right:auto; min-width:0}
+.pill{font-size:.78rem; font-weight:700; padding:4px 11px; border-radius:999px; background:var(--accent-soft); color:var(--accent); white-space:nowrap}
+.pill.clock{background:var(--panel2); color:var(--dim); font-variant-numeric:tabular-nums}
+.track{height:7px; background:var(--edge); border-radius:999px; overflow:hidden; margin-bottom:18px}
+.track i{display:block; height:100%; background:var(--accent); width:0; border-radius:999px; transition:width .3s ease}
+
+.pane{background:var(--panel); border:1px solid var(--edge); border-radius:15px; padding:19px; box-shadow:var(--shadow); min-width:0}
+.pane + .pane{margin-top:14px}
+.tag{font-size:.71rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); font-weight:700; margin:0 0 10px}
+.qtext{font-size:1.16rem; line-height:1.6; margin:0}
+.qtext .blank{font-weight:700; color:var(--accent)}
+.jumble{font-family:Fraunces,serif; font-size:1.2rem; font-weight:600; line-height:1.6; margin:0;
+  background:var(--panel2); border:1px dashed var(--edge2); border-radius:11px; padding:13px 15px}
+.cue{display:inline-block; font-weight:700; color:var(--accent); background:var(--accent-soft); border-radius:7px; padding:1px 9px; margin:0 2px}
+.vimean{font-size:1.32rem; font-weight:600; margin:0}
+.hintrow{margin:12px 0 0; color:var(--dim); font-size:.88rem}
+.firstl{font-family:Fraunces,serif; font-size:1.5rem; font-weight:700; color:var(--accent); letter-spacing:.06em}
+
+.psg{margin:0; font-size:1.04rem; line-height:1.95}
+.psg .g{display:inline-block; min-width:3.4em; text-align:center; padding:0 7px; margin:0 2px;
+  border-bottom:2px solid var(--edge2); font-weight:700; color:var(--dim)}
+.psg .g.now{background:var(--accent-soft); color:var(--accent); border-bottom-color:var(--accent); border-radius:4px}
+.psg .g.done{border-bottom:none; min-width:0; padding:0; color:var(--ok); font-weight:600}
+.psg .g.done.miss{color:var(--no); text-decoration:underline wavy var(--no)}
+.psg h4{font-family:Fraunces,serif; margin:0 0 7px; font-size:1rem; color:var(--dim)}
+
+.opts{display:grid; gap:10px; margin-top:4px}
+.opt{display:flex; gap:11px; align-items:flex-start; width:100%; text-align:left;
+  background:var(--panel2); border:1.5px solid var(--edge2); border-radius:11px; padding:12px 14px;
+  font:inherit; color:var(--fg); cursor:pointer; min-width:0;
+  transition:border-color .12s ease, background .12s ease}
+.opt:hover:not(:disabled){border-color:var(--accent); background:var(--accent-soft)}
+.opt:disabled{cursor:default}
+.opt .k{flex:0 0 auto; width:25px; height:25px; border-radius:50%; display:grid; place-items:center;
+  background:var(--panel); border:1.5px solid var(--edge2); font-weight:700; font-size:.8rem; font-family:Fraunces,serif}
+.opt .v{min-width:0; flex:1}
+.opt.good{border-color:var(--ok); background:var(--ok-soft)}
+.opt.good .k{border-color:var(--ok); background:var(--ok); color:#fff}
+.opt.bad{border-color:var(--no); background:var(--no-soft); opacity:.75}
+.opt.bad .k{border-color:var(--no); background:var(--no); color:#fff}
+
+.typerow{display:flex; gap:9px; margin-top:13px; flex-wrap:wrap}
+.typerow input{flex:1 1 220px; min-width:0; padding:12px 14px; font:inherit; font-size:1.05rem;
+  color:var(--fg); background:var(--panel2); border:1.5px solid var(--edge2); border-radius:10px}
+.typerow input:focus{outline:2px solid var(--accent); outline-offset:1px}
+.typerow input.good{border-color:var(--ok); background:var(--ok-soft)}
+.typerow input.bad{border-color:var(--no); background:var(--no-soft)}
+.shake{animation:sh .32s}
+@keyframes sh{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+
+.fb{margin-top:14px; padding:13px 15px; border-radius:11px; font-size:.94rem; border:1.5px solid}
+.fb.y{background:var(--ok-soft); border-color:var(--ok)}
+.fb.n{background:var(--no-soft); border-color:var(--no)}
+.fb.w{background:var(--warn-soft); border-color:var(--warn)}
+.fb .h{font-weight:700; display:block; margin-bottom:3px}
+.fb b{color:var(--accent)}
+
+.row{display:flex; gap:10px; margin-top:15px; flex-wrap:wrap; align-items:center}
+button.go{font:inherit; font-weight:700; padding:11px 22px; border-radius:10px; cursor:pointer;
+  background:var(--accent); color:var(--bg); border:1.5px solid var(--accent)}
+button.go:hover{filter:brightness(1.07)}
+button.ghost{font:inherit; font-weight:600; padding:11px 18px; border-radius:10px; cursor:pointer;
+  background:transparent; color:var(--fg); border:1.5px solid var(--edge2)}
+button.ghost:hover{border-color:var(--accent); color:var(--accent)}
+
+.shot{margin-top:16px; padding:15px 17px; border-radius:13px; border:2px dashed var(--accent);
+  background:var(--accent-soft); font-weight:600}
+.shot .h{font-family:Fraunces,serif; font-size:1.05rem; display:block; margin-bottom:3px; color:var(--accent)}
+.score{font-family:Fraunces,serif; font-size:3.4rem; font-weight:700; line-height:1; color:var(--accent); margin:0}
+.scsub{color:var(--dim); margin:6px 0 0}
+.stats{display:grid; gap:10px; grid-template-columns:repeat(auto-fit,minmax(125px,1fr)); margin-top:16px}
+.st{background:var(--panel2); border:1px solid var(--edge); border-radius:11px; padding:11px 13px}
+.st .n{font-family:Fraunces,serif; font-size:1.5rem; font-weight:700; line-height:1.1}
+.st .l{font-size:.78rem; color:var(--dim)}
+.rev{margin-top:18px; display:grid; gap:11px}
+.rv{background:var(--panel2); border:1px solid var(--edge); border-left:3px solid var(--no); border-radius:10px; padding:12px 14px; font-size:.91rem}
+.rv.two{border-left-color:var(--warn)}
+.rv .n{font-family:Fraunces,serif; font-weight:700; color:var(--dim); font-size:.79rem}
+.rv .right{color:var(--ok); font-weight:700}
+.foot{margin-top:26px; padding-top:13px; border-top:1px solid var(--edge); color:var(--dim); font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section id="menu">
+  <p class="brand">VUIVUI English Class</p>
+  <h1>Vocabulary Lab — 75 từ</h1>
+  <p class="lede">Bốn bài luyện tập cho trọn 75 từ vựng của hai bài nghe Stress và Nutrition. Nếu chọn sai, em được chọn lại MỘT lần nữa, sau đó đáp án chính thức và phần giải thích sẽ hiện ra.</p>
+
+  <div class="namebox">
+    <label for="nm">Tên của em (để chụp màn hình gửi cô)</label>
+    <input type="text" id="nm" placeholder="Ví dụ: Nguyễn Minh Anh" autocomplete="off">
+  </div>
+
+  <div class="menu" id="cards"></div>
+  <p class="foot">Màn hình cuối mỗi bài có bảng thống kê — em chụp lại và gửi cho cô giáo.</p>
+</section>
+
+<section id="quiz" hidden>
+  <div class="bar">
+    <span class="t" id="qt"></span>
+    <span class="pill" id="qp"></span>
+    <span class="pill" id="qs"></span>
+    <span class="pill clock" id="qc">00:00</span>
+  </div>
+  <div class="track"><i id="qbar"></i></div>
+
+  <div class="pane" id="qpane"></div>
+  <div class="pane">
+    <p class="tag" id="atag">Trả lời</p>
+    <div id="answer"></div>
+    <div id="fb"></div>
+    <div class="row">
+      <button class="go" id="next" hidden>Câu tiếp theo</button>
+      <button class="ghost" id="quit">Thoát</button>
+    </div>
+  </div>
+</section>
+
+<section id="done" hidden>
+  <p class="brand" id="dnm"></p>
+  <h1 id="dt"></h1>
+  <div class="pane" style="margin-top:14px">
+    <p class="score" id="dsc"></p>
+    <p class="scsub" id="dmsg"></p>
+    <div class="stats" id="dstats"></div>
+    <div class="shot"><span class="h">Em hãy chụp lại màn hình này và gửi cho cô giáo.</span>
+      Nhớ chụp đủ phần tên, điểm số và thời gian hoàn thành ở trên.</div>
+  </div>
+  <div class="rev" id="drev"></div>
+  <div class="row">
+    <button class="go" id="again">Làm lại bài này</button>
+    <button class="ghost" id="home">Về trang đầu</button>
+  </div>
+</section>
+
+</div>
+
+<script>
+/* ============ DỮ LIỆU — 75 từ vựng Stress & Nutrition ============ */
+
+/* ---------- Bài 1: chọn từ hoàn thành câu (20 câu) ---------- */
+const EX1 = [
+ {q:'A ______ diet includes fruit, vegetables and whole grain cereals.',o:['balanced','balance','balancing'],a:'balanced',
+  e:'Trước danh từ <i>diet</i> cần TÍNH TỪ → <b>balanced</b>. <i>balance</i> là danh từ (sự cân bằng).'},
+ {q:'Whether you need supplements ______ on your diet.',o:['depends','includes','produces'],a:'depends',
+  e:'<b>depend ON something</b> = phụ thuộc vào cái gì. Luôn đi với <i>on</i>, không dùng <i>depend of</i>.'},
+ {q:'My guest today is a nutrition ______ from Central University.',o:['expert','exercise','expensive'],a:'expert',
+  e:'<b>expert</b> = chuyên gia. <i>a nutrition expert</i> = chuyên gia dinh dưỡng.'},
+ {q:'Whole ______ cereals are better for you than white bread.',o:['grain','grade','green'],a:'grain',
+  e:'<b>whole grain</b> = ngũ cốc nguyên hạt. Đừng nhầm với <i>grade</i> (điểm số).'},
+ {q:'The price ______ breakfast, lunch and dinner.',o:['includes','joins','depends'],a:'includes',
+  e:'<b>include something</b> = bao gồm. Sau <i>include</i> là tân ngữ trực tiếp, không có giới từ.'},
+ {q:'Thanks for ______ us on the show today.',o:['joining','including','producing'],a:'joining',
+  e:'<b>Thanks for + V-ing</b>. <i>join somebody</i> = tham gia cùng ai.'},
+ {q:'I don’t eat much fried food because it is too ______.',o:['oily','tired','late'],a:'oily',
+  e:'<b>oily</b> = nhiều dầu mỡ, ngấy. Từ danh từ <i>oil</i> thêm <i>-y</i>.'},
+ {q:'People take far more supplements now than they did in the ______.',o:['past','fortnight','weekly'],a:'past',
+  e:'<b>in the past</b> = trong quá khứ, ngày xưa. Đây là cụm cố định.'},
+ {q:'The doctor told me to take one ______ every morning after breakfast.',o:['pill','grain','diet'],a:'pill',
+  e:'<b>pill</b> = viên thuốc. <i>take a pill</i> = uống một viên thuốc.'},
+ {q:'Factories in this country ______ millions of bottles every year.',o:['produce','product','production'],a:'produce',
+  e:'Vị trí này cần ĐỘNG TỪ → <b>produce</b> (sản xuất). <i>product</i> và <i>production</i> là danh từ.'},
+ {q:'This ______ contains a lot of sugar, so I never buy it.',o:['product','produce','producer'],a:'product',
+  e:'Sau <i>This</i> cần DANH TỪ chỉ vật → <b>product</b> (sản phẩm). <i>producer</i> là người sản xuất.'},
+ {q:'He is the biggest ______ of rice in this region.',o:['producer','production','product'],a:'producer',
+  e:'<b>producer</b> = nhà sản xuất (= manufacturer), chỉ NGƯỜI hoặc công ty.'},
+ {q:'About 70% of Americans take some kind of vitamin ______.',o:['supplement','symptom','schedule'],a:'supplement',
+  e:'<b>supplement</b> = thực phẩm bổ sung. <i>symptom</i> là triệu chứng, <i>schedule</i> là lịch.'},
+ {q:'Fish and green vegetables are very ______.',o:['nutritious','nutrition','nutritiously'],a:'nutritious',
+  e:'Sau <i>are very</i> cần TÍNH TỪ → <b>nutritious</b> (giàu dinh dưỡng).'},
+ {q:'She studied ______ at university before she became a chef.',o:['nutrition','nutritious','nutritional'],a:'nutrition',
+  e:'Sau <i>studied</i> cần DANH TỪ tên môn học → <b>nutrition</b> (dinh dưỡng).'},
+ {q:'If you sleep well tonight, you will ______ feel better tomorrow.',o:['probably','hardly','never'],a:'probably',
+  e:'<b>probably</b> = có lẽ. <i>hardly</i> và <i>never</i> mang nghĩa phủ định nên trái ý câu.'},
+ {q:'I still take vitamins ______ I eat pretty well.',o:['even if','because','so'],a:'even if',
+  e:'<b>even if</b> = ngay cả khi. Hai vế trái ngược nhau nên không dùng <i>because</i> hay <i>so</i>.'},
+ {q:'You should never skip ______ — it is the most important meal of the day.',o:['breakfast','lunch','dinner'],a:'breakfast',
+  e:'<b>breakfast</b> = bữa sáng. Vế sau nói “bữa quan trọng nhất trong ngày”.'},
+ {q:'Since she left that job, she has had more ______ over her own time.',o:['control','controlled','controlling'],a:'control',
+  e:'<b>have control over something</b> = kiểm soát được cái gì. Sau <i>more</i> cần danh từ.'},
+ {q:'Laughing with friends is a great ______ to reduce stress.',o:['way','cause','symptom'],a:'way',
+  e:'Cụm cố định <b>a great way to V</b> = một cách tốt để làm gì.'},
+];
+
+/* ---------- Bài 2: 4 đoạn văn × 5 câu × 5 chỗ trống ---------- */
+const PASS = [
+ {t:'A balanced diet',
+  p:['A ',1,' diet is the best way to stay healthy. ',
+     'It should ',2,' plenty of fruit and vegetables, whole ',3,
+     ' cereals, and oily fish such as tuna or salmon. ',
+     'Most experts say that if you eat like this, you ',4,' don’t need to take any pills at all. ',
+     'Of course, it also ',5,' on your age, your job and how much exercise you do. ',
+     'For most people, however, good food works much better than any expensive supplement.']},
+ {t:'Why people take supplements',
+  p:['People take far more supplements today than they did in the ',6,'. ',
+     'In the United States, ',7,' make billions of dollars’ worth of vitamin pills every year. ',
+     'One reason is that people want to have ',8,' over their own health. ',
+     'Taking a ',9,' every morning makes them feel that they are doing something good, ',10,
+     ' if they often eat junk food. ',
+     'Nutrition experts, however, say that no pill can replace a plate of vegetables.']},
+ {t:'My stressful term',
+  p:['Last term was the most ',11,' one I have ever had at this school. ',
+     'I had four ',12,' in a single week, and I was so worried about my ',13,' that I could hardly sleep. ',
+     'By Friday I felt completely ',14,' and I had no energy left at all. ',
+     'My teacher told me that tiredness is only a ',15,' of stress, not the real problem. ',
+     'This term I am going to plan my weeks much more carefully.']},
+ {t:'How often do you exercise?',
+  p:['I used to be very lazy, but these days I work ',16,' at the gym three ',17,' a week. ',
+     'My sister goes ',18,' a week, usually on Saturday morning and again on Sunday. ',
+     'My brother ',19,' ever exercises, so he gets tired very quickly when we walk up the hill. ',
+     'We all eat breakfast together ',20,' day before school, and nobody is allowed to skip it. ',
+     'Exercise and good food have made our whole family feel much more energetic.']},
+];
+
+const EX2 = [
+ {o:['balanced','balance','balancing'],a:'balanced',e:'Trước danh từ <i>diet</i> cần TÍNH TỪ → <b>balanced</b>.'},
+ {o:['include','includes','including'],a:'include',e:'Sau <i>should</i> là động từ nguyên thể → <b>include</b>.'},
+ {o:['grain','grade','green'],a:'grain',e:'<b>whole grain cereals</b> = ngũ cốc nguyên hạt.'},
+ {o:['probably','hardly','never'],a:'probably',e:'<b>probably</b> = có lẽ. Hai từ kia mang nghĩa phủ định nên trái ý câu.'},
+ {o:['depends','includes','produces'],a:'depends',e:'<b>depend on something</b> — chủ ngữ <i>it</i> số ít nên thêm <i>-s</i>.'},
+ {o:['past','fortnight','weekly'],a:'past',e:'<b>in the past</b> = ngày xưa, trước đây.'},
+ {o:['manufacturers','supplements','symptoms'],a:'manufacturers',e:'<b>manufacturers</b> = các nhà sản xuất (= producers). Chỉ người/công ty mới “make” được.'},
+ {o:['control','balance','nutrition'],a:'control',e:'<b>have control over something</b> = kiểm soát được cái gì.'},
+ {o:['pill','grain','grade'],a:'pill',e:'<b>take a pill</b> = uống một viên thuốc.'},
+ {o:['even','only','just'],a:'even',e:'<b>even if</b> = ngay cả khi. Hai vế của câu trái ngược nhau.'},
+ {o:['stressful','stressed','stress'],a:'stressful',e:'Học kỳ GÂY căng thẳng → <b>stressful</b>. Người mới dùng <i>stressed</i>.'},
+ {o:['exams','grades','jobs'],a:'exams',e:'<b>exams</b> = các kỳ thi. Vế sau nói về điểm số và mất ngủ.'},
+ {o:['grades','symptoms','schedules'],a:'grades',e:'<b>worry about my grades</b> = lo lắng về điểm số.'},
+ {o:['run-down','energetic','nutritious'],a:'run-down',e:'<b>run-down</b> = kiệt sức. Vế sau giải thích: không còn chút năng lượng nào.'},
+ {o:['symptom','cause','reduction'],a:'symptom',e:'Mệt mỏi chỉ là <b>symptom</b> (triệu chứng), không phải nguyên nhân thật.'},
+ {o:['out','on','in'],a:'out',e:'<b>work out</b> = tập thể dục (= exercise).'},
+ {o:['times','time','timely'],a:'times',e:'<b>three times a week</b>. Từ ba lần trở lên dùng <i>times</i>.'},
+ {o:['twice','two','second'],a:'twice',e:'<b>twice a week</b> = hai lần một tuần. Không nói “two times a week”.'},
+ {o:['hardly','always','often'],a:'hardly',e:'<b>hardly ever</b> = hầu như không bao giờ. Vế sau giải thích: nên anh ấy mau mệt.'},
+ {o:['every','all','each'],a:'every',e:'<b>every day</b> = hằng ngày. Không nói “all day” ở đây vì <i>all day</i> nghĩa là “cả ngày”.'},
+];
+
+/* ---------- Bài 3: sắp xếp thành câu — học sinh tự gõ (20 câu) ---------- */
+const EX3 = [
+ {w:'a balanced diet  /  is  /  the best way  /  to stay healthy', a:['A balanced diet is the best way to stay healthy.'],
+  e:'Cấu trúc <b>S + be + the best way to V</b>.'},
+ {w:'on  /  it  /  your age  /  depends', a:['It depends on your age.'],
+  e:'<b>depend on something</b> — giới từ <i>on</i> đi liền sau động từ.'},
+ {w:'fruit and vegetables  /  should  /  plenty of  /  you  /  eat', a:['You should eat plenty of fruit and vegetables.'],
+  e:'Sau <b>should</b> là động từ nguyên thể; <i>plenty of</i> đứng trước danh từ.'},
+ {w:'every morning  /  a vitamin pill  /  takes  /  she', a:['She takes a vitamin pill every morning.'],
+  e:'Trật tự: chủ ngữ → động từ → tân ngữ → cụm thời gian.'},
+ {w:'nutrition  /  my sister  /  an expert  /  is  /  in', a:['My sister is an expert in nutrition.'],
+  e:'<b>an expert in + lĩnh vực</b> = chuyên gia về mảng nào.'},
+ {w:'us  /  for  /  thanks  /  joining', a:['Thanks for joining us.'],
+  e:'<b>Thanks for + V-ing</b>: sau giới từ <i>for</i> phải là động từ đuôi <i>-ing</i>.'},
+ {w:'breakfast, lunch and dinner  /  includes  /  the price', a:['The price includes breakfast, lunch and dinner.'],
+  e:'<b>include</b> là ngoại động từ, theo sau là tân ngữ, không có giới từ.'},
+ {w:'than  /  more supplements  /  in the past  /  people take  /  now  /  they did',
+  a:['People take more supplements now than they did in the past.'],
+  e:'So sánh hơn: <b>more + danh từ + than</b>; <i>now</i> và <i>in the past</i> đặt ở hai vế đối nhau.'},
+ {w:'over  /  I  /  my own schedule  /  have control', a:['I have control over my own schedule.'],
+  e:'<b>have control over something</b> = kiểm soát được cái gì.'},
+ {w:'three times a week  /  at the gym  /  I  /  work out', a:['I work out at the gym three times a week.'],
+  e:'Trật tự: động từ → nơi chốn → tần suất.'},
+ {w:'junk food  /  hardly  /  my brother  /  eats  /  ever', a:['My brother hardly ever eats junk food.'],
+  e:'<b>hardly ever</b> = hầu như không bao giờ, đứng trước động từ thường.'},
+ {w:'too oily  /  is  /  this fish', a:['This fish is too oily.'],
+  e:'<b>too + tính từ</b> = quá … (mang nghĩa tiêu cực).'},
+ {w:'a great way  /  exercise  /  to reduce stress  /  is', a:['Exercise is a great way to reduce stress.'],
+  e:'<b>a great way TO V</b> — sau <i>way</i> dùng <i>to</i> + động từ nguyên thể.'},
+ {w:'about  /  worried  /  I’m  /  my grades', a:['I’m worried about my grades.','I am worried about my grades.'],
+  e:'<b>be worried about something</b> = lo lắng về cái gì.'},
+ {w:'forget  /  don’t  /  your vitamins  /  to take', a:['Don’t forget to take your vitamins.','Do not forget to take your vitamins.'],
+  e:'<b>forget to V</b> = quên làm gì. Câu mệnh lệnh phủ định mở đầu bằng <i>Don’t</i>.'},
+ {w:'of stress  /  is  /  tiredness  /  a symptom', a:['Tiredness is a symptom of stress.'],
+  e:'<b>a symptom of something</b> = triệu chứng của cái gì.'},
+ {w:'even if  /  I take vitamins  /  I eat pretty well', a:['I take vitamins even if I eat pretty well.'],
+  e:'<b>even if</b> nối hai vế trái ngược: vẫn uống vitamin dù đã ăn khá tốt.'},
+ {w:'millions of bottles  /  this factory  /  every year  /  produces', a:['This factory produces millions of bottles every year.'],
+  e:'Chủ ngữ <i>This factory</i> số ít, hiện tại đơn → <b>produces</b>.'},
+ {w:'nutritious  /  very  /  fish and vegetables  /  are', a:['Fish and vegetables are very nutritious.'],
+  e:'Chủ ngữ số nhiều → <i>are</i>; sau đó là <i>very</i> + tính từ <b>nutritious</b>.'},
+ {w:'feel  /  these days  /  I  /  run-down', a:['I feel run-down these days.'],
+  e:'<b>feel + tính từ</b>; cụm thời gian <i>these days</i> đặt cuối câu.'},
+];
+
+/* ---------- Bài 4: kiểm tra chính tả — đủ 75 từ ---------- */
+const EX4 = [
+ {vi:'thức ăn, chế độ ăn',p:'n',a:'diet',e:'<b>diet</b> — viết <i>ie</i>.'},
+ {vi:'năng lượng',p:'n',a:'energy',e:'<b>energy</b> — kết thúc bằng <i>y</i>.'},
+ {vi:'nhiều năng lượng',p:'adj',a:'energetic',e:'<b>energetic</b> — <i>energy</i> bỏ <i>y</i>, thêm <i>-etic</i>.'},
+ {vi:'cô đơn (cảm giác)',p:'adj',a:'lonely',e:'<b>lonely</b> — có đuôi <i>-ly</i> nhưng là TÍNH TỪ.'},
+ {vi:'một mình',p:'adj',a:'alone',e:'<b>alone</b> — chỉ một chữ <i>l</i>.'},
+ {vi:'quản lý, kiểm soát',p:'v',a:'manage',e:'<b>manage</b> — có <i>e</i> ở cuối.'},
+ {vi:'làm giảm',p:'v',a:'reduce',e:'<b>reduce</b> — r-e-d-u-c-e.'},
+ {vi:'làm giảm (= reduce)',p:'v',a:'decrease',e:'<b>decrease</b> — có hai chữ <i>e</i> liền nhau ở giữa.'},
+ {vi:'sự giảm',p:'n',a:'reduction',e:'<b>reduction</b> — <i>reduce</i> đổi <i>ce</i> thành <i>ction</i>.'},
+ {vi:'mệt, kiệt sức',p:'adj',a:'run-down',alt:['rundown'],e:'<b>run-down</b> — có dấu gạch nối khi làm tính từ.'},
+ {vi:'sự căng thẳng',p:'n',a:'stress',e:'<b>stress</b> — hai chữ <i>s</i> ở cuối.'},
+ {vi:'gây căng thẳng',p:'adj',a:'stressful',e:'<b>stressful</b> — đuôi <i>-ful</i> chỉ một chữ <i>l</i>.'},
+ {vi:'bị căng thẳng (cảm giác)',p:'adj',a:'stressed',e:'<b>stressed</b> — tả cảm giác của người.'},
+ {vi:'cảm thấy',p:'v',a:'feel',e:'<b>feel</b> + tính từ: <i>feel tired</i>, <i>feel better</i>.'},
+ {vi:'kỳ thi',p:'n',a:'exam',e:'<b>exam</b> — dạng đầy đủ là <i>examination</i>.'},
+ {vi:'mệt mỏi',p:'adj',a:'tired',e:'<b>tired</b> — <i>tire</i> + <i>d</i>.'},
+ {vi:'quên',p:'v',a:'forget',e:'<b>forget</b> — <i>forget to V</i> = quên làm gì.'},
+ {vi:'lịch, thời gian biểu',p:'n',a:'schedule',e:'<b>schedule</b> — nhớ cụm <i>sch-</i> ở đầu.'},
+ {vi:'muộn, trễ',p:'adj',a:'late',e:'<b>late</b> — <i>be late for school</i>.'},
+ {vi:'công việc',p:'n',a:'job',e:'<b>job</b> — <i>get a job</i> = xin được việc.'},
+ {vi:'hiếm khi',p:'adv',a:'hardly',e:'<b>hardly</b> = hiếm khi, KHÔNG phải “một cách khó khăn”.'},
+ {vi:'hàng tuần',p:'adj',a:'weekly',e:'<b>weekly</b> — <i>week</i> + <i>ly</i>.'},
+ {vi:'nguyên nhân; gây ra',p:'n, v',a:'cause',e:'<b>cause</b> — <i>the cause of sth</i> (n) và <i>cause sth</i> (v).'},
+ {vi:'điểm số',p:'n',a:'grade',e:'<b>grade</b> — có <i>e</i> ở cuối.'},
+ {vi:'cười',p:'v',a:'laugh',e:'<b>laugh</b> — có <i>gh</i> câm ở cuối.'},
+ {vi:'tiếng cười',p:'n',a:'laughter',e:'<b>laughter</b> — <i>laugh</i> + <i>ter</i>.'},
+ {vi:'lo lắng; sự lo lắng',p:'v, n',a:'worry',e:'<b>worry</b> — <i>worry about sth</i>.'},
+ {vi:'cảm thấy lo lắng',p:'adj',a:'worried',e:'<b>worried</b> — <i>be worried about sth</i>.'},
+ {vi:'triệu chứng',p:'n',a:'symptom',e:'<b>symptom</b> — s-y-m-p-t-o-m, có <i>p</i> ở giữa.'},
+ {vi:'thuộc về giao lưu, xã hội',p:'adj',a:'social',e:'<b>social</b> — <i>have social time</i> = có thời gian giao lưu.'},
+ {vi:'tăng thêm, đạt được',p:'v',a:'gain',e:'<b>gain</b> — <i>gain weight</i> = tăng cân.'},
+ {vi:'cân nặng',p:'n',a:'weight',e:'<b>weight</b> — nhớ quy tắc <i>ei</i> sau <i>w</i>.'},
+ {vi:'hằng năm',p:'adj, adv',a:'yearly',e:'<b>yearly</b> = every year.'},
+ {vi:'hằng tháng',p:'adj, adv',a:'monthly',e:'<b>monthly</b> = every month.'},
+ {vi:'hằng ngày',p:'adj, adv',a:'daily',e:'<b>daily</b> — <i>day</i> đổi <i>y</i> thành <i>i</i> rồi thêm <i>ly</i>.'},
+ {vi:'hàng giờ',p:'adj, adv',a:'hourly',e:'<b>hourly</b> = every hour. Chữ <i>h</i> câm.'},
+ {vi:'một lần',p:'adv',a:'once',e:'<b>once a week</b> = một lần một tuần.'},
+ {vi:'hai lần',p:'adv',a:'twice',e:'<b>twice a week</b>. Không nói “two times a week”.'},
+ {vi:'khoảng thời gian hai tuần',p:'n',a:'fortnight',e:'<b>fortnight</b> — <i>fort</i> + <i>night</i>, nghĩa là 14 ngày.'},
+ {vi:'không bao giờ',p:'adv',a:'never',e:'<b>never</b> đứng trước động từ thường.'},
+ {vi:'hiếm khi (= hardly)',p:'adv',a:'rarely',e:'<b>rarely</b> — <i>rare</i> + <i>ly</i>.'},
+ {vi:'hiếm khi (= rarely)',p:'adv',a:'seldom',e:'<b>seldom</b> — s-e-l-d-o-m.'},
+ {vi:'thỉnh thoảng',p:'adv',a:'sometimes',e:'<b>sometimes</b> — có <i>s</i> ở cuối, khác với <i>sometime</i>.'},
+ {vi:'thỉnh thoảng (= sometimes)',p:'adv',a:'occasionally',e:'<b>occasionally</b> — hai chữ <i>c</i>, một chữ <i>s</i>.'},
+ {vi:'thường',p:'adv',a:'often',e:'<b>often</b> — o-f-t-e-n.'},
+ {vi:'thường xuyên',p:'adv',a:'usually',e:'<b>usually</b> — hai chữ <i>l</i>.'},
+ {vi:'đều đặn (= usually)',p:'adv',a:'regularly',e:'<b>regularly</b> — <i>regular</i> + <i>ly</i>.'},
+ {vi:'luôn luôn',p:'adv',a:'always',e:'<b>always</b> — có <i>l</i>, không viết “alway”.'},
+ {vi:'tập thể dục',p:'v, n',a:'exercise',e:'<b>exercise</b> — e-x-e-r-c-i-s-e, bằng <i>work out</i>.'},
+ {vi:'đồ ăn vặt kém lành mạnh',p:'n',a:'junk food',e:'<b>junk food</b> — hai từ rời, không viết liền.'},
+ {vi:'khá là (= quite)',p:'adv',a:'pretty',e:'<b>pretty</b> — hai chữ <i>t</i>.'},
+ {vi:'sự cân bằng',p:'n',a:'balance',e:'<b>balance</b> — có <i>e</i> ở cuối.'},
+ {vi:'cân bằng, hợp lý',p:'adj',a:'balanced',e:'<b>balanced</b> — <i>a balanced diet</i>.'},
+ {vi:'điều khiển; sự kiểm soát',p:'v, n',a:'control',e:'<b>control</b> — một chữ <i>l</i> ở cuối.'},
+ {vi:'phụ thuộc vào',p:'v',a:'depend',e:'<b>depend</b> — luôn đi với <i>on</i>.'},
+ {vi:'chuyên gia',p:'n',a:'expert',e:'<b>expert</b> — e-x-p-e-r-t.'},
+ {vi:'hạt, ngũ cốc',p:'n',a:'grain',e:'<b>grain</b> — <i>whole grain cereals</i>.'},
+ {vi:'bao gồm',p:'v',a:'include',e:'<b>include</b> — có <i>e</i> ở cuối.'},
+ {vi:'tham gia cùng',p:'v',a:'join',e:'<b>join</b> — <i>Thanks for joining us</i>.'},
+ {vi:'nhiều dầu mỡ, ngấy',p:'adj',a:'oily',e:'<b>oily</b> — <i>oil</i> + <i>y</i>.'},
+ {vi:'quá khứ',p:'n',a:'past',e:'<b>past</b> — <i>in the past</i>.'},
+ {vi:'viên thuốc',p:'n',a:'pill',e:'<b>pill</b> — hai chữ <i>l</i>.'},
+ {vi:'sản xuất',p:'v',a:'produce',e:'<b>produce</b> — động từ, trọng âm rơi vào âm thứ hai.'},
+ {vi:'sản phẩm',p:'n',a:'product',e:'<b>product</b> — không có <i>e</i> ở cuối.'},
+ {vi:'việc sản xuất',p:'n',a:'production',e:'<b>production</b> — <i>produce</i> đổi <i>ce</i> thành <i>ction</i>.'},
+ {vi:'nhà sản xuất',p:'n',a:'producer',e:'<b>producer</b> — người hoặc công ty sản xuất.'},
+ {vi:'nhà sản xuất (= producer)',p:'n',a:'manufacturer',e:'<b>manufacturer</b> — m-a-n-u-f-a-c-t-u-r-e-r.'},
+ {vi:'thực phẩm bổ sung',p:'n',a:'supplement',e:'<b>supplement</b> — hai chữ <i>p</i>.'},
+ {vi:'dinh dưỡng',p:'n',a:'nutrition',e:'<b>nutrition</b> — đuôi <i>-tion</i>.'},
+ {vi:'giàu dinh dưỡng',p:'adj',a:'nutritious',e:'<b>nutritious</b> — đuôi <i>-tious</i>, không phải <i>-tios</i>.'},
+ {vi:'có lẽ',p:'adv',a:'probably',e:'<b>probably</b> — <i>probable</i> bỏ <i>e</i>, thêm <i>y</i>.'},
+ {vi:'ngay cả khi',p:'conj',a:'even if',e:'<b>even if</b> — hai từ rời.'},
+ {vi:'bữa sáng',p:'n',a:'breakfast',e:'<b>breakfast</b> — <i>break</i> + <i>fast</i>, viết liền.'},
+ {vi:'bữa trưa',p:'n',a:'lunch',e:'<b>lunch</b> — l-u-n-c-h.'},
+ {vi:'bữa tối',p:'n',a:'dinner',e:'<b>dinner</b> — hai chữ <i>n</i>.'},
+];
+
+
+/* ===================== CẤU HÌNH ===================== */
+const TASKS = [
+  {n:'Bài 1', name:'Chọn từ hoàn thành câu', desc:'Đọc câu và chọn từ đúng trong ba phương án.',
+   kind:'mcq', data:EX1, colour:'var(--c1)', soft:'var(--c1s)', tag:'Chọn một phương án'},
+  {n:'Bài 2', name:'Hoàn thành đoạn văn', desc:'Bốn đoạn văn, mỗi đoạn 5 câu và 5 chỗ trống.',
+   kind:'psg', data:EX2, colour:'var(--c2)', soft:'var(--c2s)', tag:'Chọn một phương án'},
+  {n:'Bài 3', name:'Sắp xếp thành câu', desc:'Các từ bị xáo trộn. Em phải TỰ GÕ lại cả câu.',
+   kind:'sent', data:EX3, colour:'var(--c3)', soft:'var(--c3s)', tag:'Gõ lại cả câu'},
+  {n:'Bài 4', name:'Kiểm tra chính tả', desc:'Đủ 75 từ. Cho nghĩa tiếng Việt, từ loại và chữ cái đầu.',
+   kind:'spell', data:EX4, colour:'var(--c4)', soft:'var(--c4s)', tag:'Gõ từ đầy đủ'},
+];
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shuffle = a => { const x=a.slice(); for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]];} return x; };
+const mmss = s => String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
+
+function norm(s){
+  return String(s).toLowerCase()
+    .replace(/[‘’ʼ]/g,"'").replace(/[“”]/g,'"')
+    .replace(/[.!?,;:]+$/g,'').replace(/\s+/g,' ').trim();
+}
+const same = (given, list) => list.some(a => norm(a) === norm(given));
+
+/* ===================== TRẠNG THÁI ===================== */
+let T=0, i=0, score=0, second=0, missed=0, items=[], log=[], done=false, tries=0, name='';
+let tid=null, secs=0;
+
+try{ const v=localStorage.getItem('vv_v75_name'); if(v) $('nm').value=v; }catch(e){}
+
+$('cards').innerHTML = TASKS.map((t,ix)=>
+  '<button class="card" data-go="'+ix+'" style="--k:'+t.colour+'">'
+  +'<span class="no">'+t.n+'</span><h3>'+esc(t.name)+'</h3><p>'+esc(t.desc)+'</p>'
+  +'<div class="meta"><span>'+t.data.length+' câu</span><span class="star">'
+  +(t.kind==='mcq'||t.kind==='psg' ? 'trắc nghiệm' : 'tự gõ')+'</span></div></button>'
+).join('');
+
+/* ---------- đồng hồ đếm thời gian hoàn thành ---------- */
+function startClock(){
+  stopClock(); secs=0; $('qc').textContent='00:00';
+  tid = setInterval(()=>{ secs++; $('qc').textContent = mmss(secs); }, 1000);
+}
+function stopClock(){ if(tid){ clearInterval(tid); tid=null; } }
+
+/* ---------- bắt đầu một bài ---------- */
+function start(t){
+  T=t; i=0; score=0; second=0; missed=0; log=[];
+  name = $('nm').value.trim();
+  try{ localStorage.setItem('vv_v75_name', name); }catch(e){}
+  const K=TASKS[t];
+  items = K.data.map((it,ix)=>{
+    if(K.kind==='mcq'||K.kind==='psg'){ const shown=shuffle(it.o); return {...it, ix, shown, ai:shown.indexOf(it.a)}; }
+    return {...it, ix};
+  });
+  document.documentElement.style.setProperty('--accent', K.colour);
+  document.documentElement.style.setProperty('--accent-soft', K.soft);
+  $('menu').hidden=true; $('done').hidden=true; $('quiz').hidden=false;
+  $('qt').textContent = K.n + ' — ' + K.name;
+  $('atag').textContent = K.tag;
+  startClock();
+  render();
+  window.scrollTo(0,0);
+}
+
+/* ---------- vẽ một câu ---------- */
+function render(){
+  const K=TASKS[T], it=items[i];
+  done=false; tries=0;
+  $('qp').textContent = 'Câu ' + (i+1) + ' / ' + items.length;
+  $('qs').textContent = 'Đúng: ' + score;
+  $('qbar').style.width = (i/items.length*100) + '%';
+  $('fb').innerHTML=''; $('next').hidden=true;
+
+  let Q = (K.kind==='psg') ? '' : ('<p class="tag">' + K.n + ' · Câu ' + (i+1) + '</p>');
+  if(K.kind==='mcq'){
+    Q += '<p class="qtext">' + esc(it.q).replace(/______/g,'<span class="blank">______</span>') + '</p>';
+  } else if(K.kind==='psg'){
+    Q += psgHTML();
+  } else if(K.kind==='sent'){
+    Q += '<p class="tag" style="margin-bottom:8px">Các từ bị xáo trộn</p>'
+       + '<p class="jumble">' + esc(it.w) + '</p>'
+       + '<p class="hintrow">Gõ lại cả câu, đúng trật tự và đủ dấu câu.</p>';
+  } else {
+    Q += '<p class="vimean">' + esc(it.vi) + '</p>'
+       + '<p class="hintrow">Từ loại: <span class="cue">' + esc(it.p) + '</span>'
+       + '  ·  Chữ cái đầu: <span class="firstl">' + esc(it.a[0]) + '</span>'
+       + '  ·  Số ký tự: <span class="cue">' + it.a.replace(/[^a-z-]/gi,'').length + '</span>'
+       + (it.a.indexOf(' ')>-1 ? '  ·  <span class="cue">gồm 2 từ</span>' : '') + '</p>';
+  }
+  $('qpane').innerHTML = Q;
+
+  if(K.kind==='mcq' || K.kind==='psg'){
+    $('answer').innerHTML = '<div class="opts">' + it.shown.map((o,n)=>
+      '<button class="opt" data-n="'+n+'"><span class="k">'+'ABC'[n]+'</span><span class="v">'+esc(o)+'</span></button>'
+    ).join('') + '</div>';
+  } else {
+    const ph = K.kind==='sent' ? 'Gõ cả câu ở đây…' : 'Gõ từ đầy đủ…';
+    $('answer').innerHTML = '<div class="typerow">'
+      + '<input type="text" id="tin" placeholder="'+ph+'" autocomplete="off" autocapitalize="off" spellcheck="false">'
+      + '<button class="go" id="chk">Kiểm tra</button></div>';
+    $('chk').addEventListener('click', checkTyped);
+    $('tin').addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); checkTyped(); } });
+    setTimeout(()=>{ const el=$('tin'); if(el) el.focus(); }, 60);
+  }
+}
+
+/* ---------- đoạn văn: chỉ hiện đoạn đang làm ---------- */
+function psgHTML(){
+  const gap = i + 1;
+  const pi = Math.max(0, PASS.findIndex(pg => pg.p.some(s => typeof s === 'number' && s === gap)));
+  const pg = PASS[pi];
+  const nums = pg.p.filter(s => typeof s === 'number');
+  let h = '<p class="tag">' + TASKS[T].n + ' · Câu ' + (i+1)
+        + '  ·  Đoạn ' + (pi+1) + '/' + PASS.length
+        + ' (chỗ trống ' + nums[0] + '–' + nums[nums.length-1] + ')</p>';
+  h += '<div class="psg"><h4>' + esc(pg.t) + '</h4><p>';
+  pg.p.forEach(seg=>{
+    if(typeof seg==='number'){
+      const gi=seg-1, d=log.find(l=>l.ix===gi);
+      if(d) h += '<span class="g done' + (d.got ? '' : ' miss') + '">' + esc(items[gi].a) + '</span>';
+      else if(gi===i) h += '<span class="g now">('+seg+')</span>';
+      else h += '<span class="g">('+seg+')</span>';
+    } else h += esc(seg);
+  });
+  return h + '</p></div>';
+}
+
+/* ---------- chấm trắc nghiệm ---------- */
+$('answer').addEventListener('click', e=>{
+  const b = e.target.closest('.opt');
+  if(!b || done || b.disabled) return;
+  const it=items[i], n=+b.dataset.n, ok=(n===it.ai);
+  tries++;
+  if(ok){ b.classList.add('good'); reveal(true); return; }
+  b.classList.add('bad'); b.disabled=true;
+  b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake');
+  if(tries===1){
+    $('fb').innerHTML = '<div class="fb n"><span class="h">Chưa đúng.</span>'
+      + 'Em đọc lại câu và <b>chọn lại một lần nữa</b> nhé — sau lần này đáp án sẽ hiện ra.</div>';
+  } else {
+    reveal(false);
+  }
+});
+
+/* ---------- chấm câu gõ tay ---------- */
+function checkTyped(){
+  if(done) return;
+  const K=TASKS[T], it=items[i], el=$('tin');
+  const v = el.value.trim();
+  if(!v){ el.focus(); return; }
+  tries++;
+  const list = K.kind==='spell' ? [it.a, ...(it.alt||[])] : it.a;
+  if(same(v, list)){
+    el.classList.remove('bad'); el.classList.add('good');
+    el.value = list[0]; el.disabled=true; $('chk').disabled=true;
+    reveal(true); return;
+  }
+  el.classList.add('bad');
+  el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake');
+  if(tries===1){
+    let tip='';
+    if(K.kind==='spell'){
+      const right=list[0].toLowerCase().replace(/[^a-z-]/g,''), got=v.toLowerCase().replace(/[^a-z-]/g,'');
+      tip = got.length!==right.length
+        ? 'Từ đúng có <b>'+right.length+'</b> ký tự, em gõ '+got.length+'.'
+        : 'Đúng số ký tự rồi, em xem lại thứ tự các chữ.';
+    } else {
+      const nw=v.split(/\s+/).length, rw=list[0].split(/\s+/).length;
+      tip = nw!==rw ? 'Câu đúng có <b>'+rw+'</b> từ, em mới gõ '+nw+' từ.'
+                    : 'Đủ số từ rồi — em xem lại trật tự và dạng của động từ.';
+    }
+    $('fb').innerHTML = '<div class="fb n"><span class="h">Chưa đúng.</span>'
+      + tip + ' Em <b>thử lại một lần nữa</b> nhé — sau lần này đáp án sẽ hiện ra.</div>';
+    el.focus(); el.select();
+  } else {
+    el.disabled=true; $('chk').disabled=true;
+    reveal(false);
+  }
+}
+
+/* ---------- hiện đáp án chính thức ---------- */
+function reveal(got){
+  done = true;
+  const K=TASKS[T], it=items[i];
+  const answer = (K.kind==='mcq'||K.kind==='psg') ? it.a : (K.kind==='spell' ? it.a : it.a[0]);
+  if(got && tries===1) score++;
+  else if(got) second++;
+  else missed++;
+  log.push({ix: it.ix, got, tries, answer, e: it.e});
+  $('qs').textContent = 'Đúng: ' + score;
+
+  if(K.kind==='mcq' || K.kind==='psg'){
+    [...$('answer').querySelectorAll('.opt')].forEach((el,ix)=>{
+      el.disabled=true;
+      if(ix===it.ai) el.classList.add('good');
+    });
+  }
+  if(K.kind==='psg') $('qpane').innerHTML = psgHTML();
+
+  const head = (got && tries===1) ? 'Chính xác!'
+             : got ? 'Đúng rồi — nhưng em làm tới lần thứ hai, nhớ kỹ chỗ này nhé.'
+                   : 'Chưa đúng. Đây là đáp án chính thức.';
+  $('fb').innerHTML = '<div class="fb ' + ((got&&tries===1)?'y':(got?'w':'n')) + '">'
+    + '<span class="h">' + head + '</span>Đáp án: <b>' + esc(answer) + '</b><br>' + it.e + '</div>';
+  $('next').hidden=false;
+  $('next').textContent = (i===items.length-1) ? 'Xem kết quả' : 'Câu tiếp theo';
+  $('next').focus();
+}
+
+$('next').addEventListener('click', ()=>{
+  if(!done) return;
+  i++;
+  if(i<items.length) render(); else finish();
+});
+
+/* ---------- kết quả ---------- */
+function finish(){
+  stopClock();
+  $('quiz').hidden=true; $('done').hidden=false;
+  const n = items.length;
+  $('dnm').textContent = name || 'VUIVUI English Class';
+  $('dt').textContent = TASKS[T].n + ' — ' + TASKS[T].name;
+  $('dsc').textContent = score + ' / ' + n;
+  const pc = score/n;
+  $('dmsg').textContent = pc===1 ? 'Hoàn hảo — em đúng hết ngay lần đầu!'
+    : pc>=.8 ? 'Rất tốt. Chỉ còn vài chỗ cần nhớ kỹ hơn.'
+    : pc>=.5 ? 'Khá ổn. Em đọc lại phần bên dưới rồi làm lại bài này.'
+    : 'Em nên học lại bảng từ vựng rồi quay lại làm bài này nhé.';
+
+  const per = n ? Math.round(secs/n) : 0;
+  $('dstats').innerHTML =
+    '<div class="st"><div class="n">'+score+'</div><div class="l">đúng ngay lần đầu</div></div>'
+   +'<div class="st"><div class="n">'+second+'</div><div class="l">đúng ở lần hai</div></div>'
+   +'<div class="st"><div class="n">'+missed+'</div><div class="l">chưa đúng</div></div>'
+   +'<div class="st"><div class="n">'+mmss(secs)+'</div><div class="l">thời gian hoàn thành</div></div>'
+   +'<div class="st"><div class="n">'+per+'s</div><div class="l">trung bình mỗi câu</div></div>';
+
+  const late = log.filter(l => !(l.got && l.tries===1));
+  $('drev').innerHTML = late.length
+    ? '<p class="tag">Những câu cần xem lại (' + late.length + ')</p>' + late.map(l=>{
+        const it = TASKS[T].data[l.ix];
+        const stem = TASKS[T].kind==='sent' ? it.w
+                   : TASKS[T].kind==='spell' ? (it.vi + ' (' + it.p + ')')
+                   : TASKS[T].kind==='psg' ? ('Chỗ trống (' + (l.ix+1) + ')')
+                   : it.q;
+        return '<div class="rv' + (l.got ? ' two' : '') + '"><div class="n">Câu ' + (l.ix+1)
+          + (l.got ? ' · đúng ở lần hai' : ' · chưa đúng') + '</div>'
+          + '<div>' + esc(stem) + '</div>'
+          + '<div class="right">Đáp án: ' + esc(l.answer) + '</div>'
+          + '<div style="margin-top:5px;color:var(--dim)">' + l.e + '</div></div>';
+      }).join('')
+    : '';
+  window.scrollTo(0,0);
+}
+
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>start(+b.dataset.go)));
+$('quit').addEventListener('click',()=>{ stopClock(); $('quiz').hidden=true; $('menu').hidden=false; window.scrollTo(0,0); });
+$('again').addEventListener('click',()=>start(T));
+$('home').addEventListener('click',()=>{ $('done').hidden=true; $('menu').hidden=false; window.scrollTo(0,0); });
+</script>
+</body>
+</html>
